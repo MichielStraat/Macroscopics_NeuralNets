@@ -7,7 +7,8 @@ the scenario specified in its arguments. It returns a list containing the
 differential equations."
 
 ClearAll[FormulateDynamics];
-FormulateDynamics[actTeach_,actStud_,K_,M_]:=(
+FormulateDynamics[actTeach_,actStud_,K_,M_] :=
+	Module[(eqnsR,eqnsQ),
 	Switch[actStud, 
 		"ReLU",I2Stud=I2ReLU;I3Stud=I3ReLU;I4Stud=I4ReLU;assumps=Flatten[{RAssumptionsReLU,QAssumptionsReLU}];
 			If[actTeach=="ReLU",I2Teach=I2ReLU;I2Cross=I2ReLU;I3Teach=I3ReLU;I4Teach=I4ReLU;,
@@ -35,7 +36,7 @@ FormulateDynamics[actTeach_,actStud_,K_,M_]:=(
 \*UnderoverscriptBox[\(\[Sum]\), \(l\), \(K\)]\(
 \*UnderoverscriptBox[\(\[Sum]\), \(j\), \(K\)]I4Teach[createCoVar[{{"\<i\>", i}, {"\<k\>", k}, {"\<j\>", j}, {"\<l\>", l}}]]\)\))]]];
 	Return[eqnsR,eqnsQ];
-)
+	]
 
 Begin["Private`"]
 (*Erf activation function averages*)
