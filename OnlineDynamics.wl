@@ -2,7 +2,7 @@
 
 BeginPackage["OnlineDynamics`"]
 
-FormulateDynamics::usage="FormulateDynamics[actTeach_,actStud_] formulates the system of differential equations 
+FormulateDynamics::usage="FormulateDynamics[actTeach_,actStud_] formulates the system of differential equations for
 the scenario specified in its arguments. It returns a list containing the
 differential equations."
 
